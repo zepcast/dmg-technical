@@ -1,0 +1,18 @@
+{
+    "name": "gc/technical-task",
+    "description": "Giuseppe Castiglione - Technical Task for DMG",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "autoload": {
+        "psr-4": {
+            "GC\\Technical\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Giuseppe Castiglione",
+            "email": "hi@zepcast.uk"
+        }
+    ],
+    "require": {}
+}
