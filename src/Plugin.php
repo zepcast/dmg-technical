@@ -2,7 +2,8 @@
 
 namespace GC\Technical;
 
-use GC\Technical\Admin\AdminMenu;
+use GC\Technical\Blocks\Blocks;
+
 class Plugin
 {
     public function run(): void
@@ -12,12 +13,12 @@ class Plugin
 
     private function registerHooks(): void
     {
-        $this->registerAdminMenu();
+        $this->registerBlocks();
     }
 
-    public function registerAdminMenu(): void
+    private function registerBlocks(): void
     {
-        $adminMenu = new AdminMenu();
-        $adminMenu->register();
+        $blocks = new Blocks();
+        $blocks->register();
     }
 }
