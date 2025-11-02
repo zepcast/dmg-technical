@@ -1,0 +1,33 @@
+.dmg-post__button {
+    text-align: left;
+}
+
+.dmg-post__button--selected {
+    font-weight: bold;
+    color: var(--wp-admin-theme-color);
+}
+
+.dmg-post__meta {
+    display: block;
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.dmg-selected-post__title {
+    font-size: 1.25rem;
+}
+
+.dmg-selected-post__actions {
+    display: flex;
+    gap: 0.5rem;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.dmg-pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

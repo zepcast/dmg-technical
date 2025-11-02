@@ -1,0 +1,26 @@
+{
+  "name": "gc-read-more",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.17.1",
+  "devDependencies": {
+    "@types/react": "^19.2.2",
+    "@types/wordpress__block-editor": "^14.21.1",
+    "@types/wordpress__blocks": "^12.5.18",
+    "@wordpress/components": "^30.7.0",
+    "@wordpress/core-data": "^7.34.0",
+    "@wordpress/data": "^10.34.0",
+    "@wordpress/element": "^6.34.0",
+    "@wordpress/i18n": "^6.7.0",
+    "@wordpress/scripts": "^30.27.0",
+    "typescript": "^5.9.3"
+  }
+}
