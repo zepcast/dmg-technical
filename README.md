@@ -67,6 +67,12 @@
 
 ## Using the WP_CLI Command
 
+This PR adds a new CLI command that searches published posts for the DMG Read More Gutenberg block and outputs their post IDs.
+
+### Command
+
+`$ wp dmg-read-more`
+
 ### Options
 
 `[--date-after=]`
