@@ -84,7 +84,7 @@ Accepts any valid date format (e.g. "2025-12-31").
 Use direct SQL query for better performance on large databases.
 Recommended for databases with millions of posts.
 
-###Examples
+### Examples
 
 Search posts from the past 30 days (standard search).
 
