@@ -1,6 +1,7 @@
 # DMG Read More - WordPress Plugin
 
-A custom WordPress block plugin that allows editors to easily create "Read More" links to any post in the site.
+- Adds a new "DMG Read More" block that allows the user to link to any post in the site.
+- Adds a new WP_CLI command that allows the user to find all posts using the above block.
 
 ## Requirements
 
@@ -38,37 +39,13 @@ A custom WordPress block plugin that allows editors to easily create "Read More"
 
 5. Activate the plugin through the WordPress admin panel
 
-## Project Structure
-
-```
-gc-read-more/
-├── src/                          # Source files
-│   ├── Admin/                    # Admin-related functionality
-│   ├── Blocks/                   # Block definitions
-│   │   └── ReadMore/            # Read More block
-│   │       ├── Components/      # React components
-│   │       ├── block.json       # Block configuration
-│   │       ├── Edit.tsx         # Block editor component
-│   │       └── render.php       # Server-side rendering
-│   ├── Components/               # Shared React components
-│   ├── types/                    # TypeScript definitions
-│   └── Plugin.php                # Main plugin class
-├── build/                        # Compiled assets (generated)
-├── gc-technical-task.php        # Plugin main file
-├── composer.json                 # PHP dependencies
-├── package.json                  # JavaScript dependencies
-├── tsconfig.json                # TypeScript configuration
-├── webpack.config.js            # Webpack customization
-└── README.md                    # This file
-```
 
 ## Usage
 
-### Adding the Block
+## Adding the Block
 
 1. In the WordPress editor, click the "+" button to add a new block
 2. Search for "DMG Read More" or find it under the "Widgets" category
-3. The block will appear with a default message
 
 ### Selecting a Post
 
@@ -88,23 +65,30 @@ gc-read-more/
   - Edit icon: Opens the post in the editor
   - View icon: Opens the post on the frontend
 
-### Building
+## Using the WP_CLI Command
 
-```bash
-# Production build
-pnpm run build
+Options
+`[--date-after=]`
+Limit results to posts published on or after this date.
+Accepts any valid date format (e.g. "2025-01-01").
 
-# Development build with watch mode
-pnpm run start
-```
+`[--date-before=]`
+Limit results to posts published on or before this date.
+Accepts any valid date format (e.g. "2025-12-31").
 
-### Architecture
+`[--fast]`
+Use direct SQL query for better performance on large databases.
+Recommended for databases with millions of posts.
 
-- **Plugin**: PSR-4 autoloading structure
-- **Blocks**: WordPress Block API (Block API v3)
-- **Frontend**: React with TypeScript
-- **Styling**: Separate CSS files for editor and frontend
-- **Build**: WP Scripts (@wordpress/scripts) with custom webpack config
+Examples
+Search posts from the past 30 days (standard search).
+`$ wp dmg-read-more`
+
+Search posts between specific dates.
+`$ wp dmg-read-more --date-after=2025-01-01 --date-before=2025-02-01`
+
+Search posts from the past 30 days using SQL for better performance on larger databases.
+`$ wp dmg-read-more --fast`
 
 ## Author
 
