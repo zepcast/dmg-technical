@@ -47,12 +47,10 @@ export default function Edit({attributes, setAttributes} : BlockEditProps<ReadMo
     };
 
     // When searching by ID, include only posts with matching id, reset page back to 1 in case user has use pagination
-    // Sanitize ID search: only allow positive integers
-    if (searchType === SEARCH_TYPE.ID && typeof searchQuery === 'number' && searchQuery > 0 && searchQuery <= Number.MAX_SAFE_INTEGER) {
+    if (searchType === SEARCH_TYPE.ID && typeof searchQuery === 'number' && searchQuery > 0) {
       query.include = [searchQuery];
       query.page = 1;
-    } else if (searchType === SEARCH_TYPE.TITLE && searchQuery && typeof searchQuery === 'string') {
-      // Title search is already sanitized by TextControl, but validate it's a string
+    } else if (searchType === SEARCH_TYPE.TITLE && searchQuery) {
       query.search = searchQuery;
     }
 

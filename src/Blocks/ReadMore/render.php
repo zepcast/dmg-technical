@@ -1,8 +1,6 @@
 <?php
 
-if (empty($attributes['postId'])) {
-    return null;
-}
+if (empty($attributes['postId'])) return;
 
 $postId = (int)$attributes['postId'];
 
