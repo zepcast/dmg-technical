@@ -67,27 +67,35 @@
 
 ## Using the WP_CLI Command
 
-Options
+### Options
+
 `[--date-after=]`
+
 Limit results to posts published on or after this date.
 Accepts any valid date format (e.g. "2025-01-01").
 
 `[--date-before=]`
+
 Limit results to posts published on or before this date.
 Accepts any valid date format (e.g. "2025-12-31").
 
 `[--fast]`
+
 Use direct SQL query for better performance on large databases.
 Recommended for databases with millions of posts.
 
-Examples
+###Examples
+
 Search posts from the past 30 days (standard search).
+
 `$ wp dmg-read-more`
 
 Search posts between specific dates.
+
 `$ wp dmg-read-more --date-after=2025-01-01 --date-before=2025-02-01`
 
 Search posts from the past 30 days using SQL for better performance on larger databases.
+
 `$ wp dmg-read-more --fast`
 
 ## Author
